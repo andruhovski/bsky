@@ -3,6 +3,12 @@ import aspose.pdf as ap
 document = ap.Document()
 page = document.pages.add()
 
+text = ap.text.TextFragment(
+        "This is the transparent text. "
+        "This is the transparent text. "
+        "This is the transparent text."
+    )
+text.text_state.foreground_color = ap.Color.from_argb(0, 0, 255, 0)
+page.paragraphs.add(text)
 
-
-document.save("latex_fragment.pdf")
+document.save("transparent_text.pdf")
