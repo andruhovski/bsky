@@ -1,7 +1,7 @@
 import aspose.pdf as ap
 
-doc = ap.Document()
-page = doc.pages.add()
+document = ap.Document()
+page = document.pages.add()
 
 text = "Lorem ipsum sample text..."
 para = ap.text.TextParagraph()
@@ -20,4 +20,4 @@ frag.text_state.font_size = 12
 para.append_line(frag)
 ap.text.TextBuilder(page).append_paragraph(para)
 
-doc.save("paragraph_text.pdf")
+document.save("day03.pdf")

@@ -1,15 +1,19 @@
 import aspose.pdf as ap
-from aspose.pdf.text import TextFragmentAbsorber, FontRepository
-
-input_file_path = "sample.pdf"
 
 document = ap.Document()
+page = document.pages.add()
+
+page.paragraphs.add(ap.text.TextFragment("An elephant is the largest land animal."))
+page.paragraphs.add(ap.text.TextFragment("This example searches for the word elephant."))
 
 absorber = ap.text.TextFragmentAbsorber(
-    "elephant", ap.text.TextSearchOptions(ap.Rectangle(0, 0, 842, 250, True))
+    "elephant",
+    ap.text.TextSearchOptions(ap.Rectangle(0, 0, 595, 842, True)),
 )
 
-document.pages[2].accept(absorber)
+document.pages[1].accept(absorber)
+
+document.save("day13.pdf")
 
 for fragment in absorber.text_fragments:
     print("Text:", fragment.text)
