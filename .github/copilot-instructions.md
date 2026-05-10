@@ -69,5 +69,7 @@ page.paragraphs.add(text_fragment)
 - **day06**: Transparent text effects
 - **day07-08**: Character spacing variations
 - **day09-10**: Line spacing and external file integration
+- **day12**: Text rotation at various angles
+- **day13**: Text search and extraction with TextFragmentAbsorber
 
 When adding new tutorial files, follow the established pattern of demonstrating one specific Aspose.PDF feature per file.
